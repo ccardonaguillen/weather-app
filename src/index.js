@@ -116,8 +116,8 @@ let main = (function () {
         hideError();
     }
 
-    async function switchCity(city) {
-        const newCity = city || (await getCurrentCity());
+    async function switchCity() {
+        const newCity = await getCurrentCity();
 
         events.emit('citySwitched', newCity);
         hideError();
