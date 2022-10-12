@@ -49,7 +49,7 @@ const bkgTranslate = {
 async function getNearestCity({ latitude, longitude }) {
     try {
         const response = await fetch(
-            'http://api.openweathermap.org/geo/1.0/reverse?' +
+            'https://api.openweathermap.org/geo/1.0/reverse?' +
                 `lat=${latitude}&lon=${longitude}&limit=1&appid=${OPENWEATHER_API_KEY}`
         );
         if (!response.ok) throw new Error('Request failed.');
@@ -116,8 +116,8 @@ let main = (function () {
         hideError();
     }
 
-    async function switchCity() {
-        const newCity = await getCurrentCity();
+    async function switchCity(city) {
+        const newCity = city || (await getCurrentCity());
 
         events.emit('citySwitched', newCity);
         hideError();
