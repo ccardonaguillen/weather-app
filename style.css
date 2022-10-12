@@ -302,9 +302,10 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     width: 100%;
-    background: linear-gradient(#ffffff2b, #ffffffa8);
+    background: linear-gradient(#00000000, #ffffff3a, #ffffff66, #ffffff75, #ffffffff);
     font-size: 1.3rem;
     font-weight: 600;
+    margin-bottom: -1rem;
 }
 
 footer>div {
