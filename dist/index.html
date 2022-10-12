@@ -5,39 +5,133 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
 
 <body>
     <header>
-        <div id="hero-container">
+        <!-- <div id="hero-container">
             <img src="#" alt="Logo" class="logo">
             <div class="hero">Weather App</div>
-        </div>
+        </div> -->
         <div id="search-city-container">
-            <form action="#" id="search-city">
-                <input type="text" name="city" id="search-city" placeholder="Search city">
-                <button type="submit">O</button>
+            <img src="media/icons/map-marker.svg" id="current-loc">
+            <form action="#" id="search-city" autocomplete="off">
+                <input type="text" name="city" id="city-input" placeholder="Search City">
+                <p id="not-found" class="">Could not resolve this city.</p>
+                <button type="submit"></button>
             </form>
         </div>
         <div class="units-container">
-            <p>Units</p>
-            <div>Imperial</div>
-            <div>Metric</div>
+            <button id="metric" class="units active">Metric</button>
+            <button id="imperial" class="units">Imperial</button>
+        </div>
         </div>
     </header>
+    <main>
+        <div id="today">
+            <div id="loc-time">
+                <p class="city">Zaragoza (ES)</p>
+                <p class="date">Tuesday, 11th Oct 22</p>
+                <p class="time">2:50 am</p>
+            </div>
+            <div id="weather-summary">
+                <div>
+                    <img src="media/icons/cloudy.svg" class="weather-icon">
+                    <p class="temperature">13ºC</p>
+                </div>
+                <p class="description">Few Clouds</p>
+            </div>
+            <div id="weather-details">
+                <div class="details-container">
+                    <img src="media/icons/windsock.svg" class="details-icon">
+                    <p class="details-label">Wind Speed</p>
+                    <p id="windspeed" class="details-value">10 km/h</p>
+                </div>
+                <div class="details-container">
+                    <img src="media/icons/water-percent.svg" class="details-icon">
+                    <p class="details-label">Humidity</p>
+                    <p id="humidity" class="details-value">20%</p>
+                </div>
+                <div class="details-container">
+                    <img src="media/icons/thermometer-lines.svg" class="details-icon">
+                    <p class="details-label">Feel Like</p>
+                    <p id="feels-like" class="details-value">10ºC</p>
+                </div>
+            </div>
+        </div>
+        <div id="next-days">
+            <div class="day-container">
+                <p class="weekday">Wednesday</p>
+                <p class="date">18th October</p>
+                <img src="media/icons/cloudy.svg" class="weather-icon">
+                <div class="container">
+                    <p class="temperature">13</p>
+                    <p class="temp-units">ºC</p>
+                </div>
+                <p class="description">Few C</p>
+            </div>
+            <div class="day-container">
+                <p class="weekday">Wednesday</p>
+                <p class="date">18th October</p>
+                <img src="media/icons/cloudy.svg" class="weather-icon">
+                <div class="container">
+                    <p class="temperature">13</p>
+                    <p class="temp-units">ºC</p>
+                </div>
+                <p class="description">Few Clouds</p>
+            </div>
+            <div class="day-container">
+                <p class="weekday">Wednesday</p>
+                <p class="date">18th October</p>
+                <img src="media/icons/cloudy.svg" class="weather-icon">
+                <div class="container">
+                    <p class="temperature">13</p>
+                    <p class="temp-units">ºC</p>
+                </div>
+                <p class="description">Few Clouds</p>
+            </div>
+            <div class="day-container">
+                <p class="weekday">Wednesday</p>
+                <p class="date">18th October</p>
+                <img src="media/icons/cloudy.svg" class="weather-icon">
+                <div class="container">
+                    <p class="temperature">13</p>
+                    <p class="temp-units">ºC</p>
+                </div>
+                <p class="description">Few Clouds</p>
+            </div>
+            <div class="day-container">
+                <p class="weekday">Wednesday</p>
+                <p class="date">18th October</p>
+                <img src="media/icons/cloudy.svg" class="weather-icon">
+                <div class="container">
+                    <p class="temperature">13</p>
+                    <p class="temp-units">ºC</p>
+                </div>
+                <p class="description">Few Clouds</p>
+            </div>
+        </div>
+    </main>
     <footer>
         <div id="openweather-credits">
-            <p>Weather data provided by <a href="https://openweathermap.org/">OpenWeather</a></p>
-
+            <p>Weather data provided by</p>
+            <a href="https://openweathermap.org/">
+                <img src="media/logo/openweather-logo-trans.png" alt="Openweather" class="big-logo">
+            </a>
         </div>
         <div id="credits">
-
+            <p>Design and code <a href="https://github.com/ccardonaguillen">Carlos Cardona</a></p>
+            <a href="https://github.com/ccardonaguillen/weather-app">
+                <img src="media/icons/github.svg" alt="Github" class="logo">
+            </a>
+        </div>
+        <div id="freepik-credits">
+            <p>Background images from <a href="https://www.freepik.com/">freepik</a></p>
         </div>
     </footer>
-
 </body>
 
 </html>

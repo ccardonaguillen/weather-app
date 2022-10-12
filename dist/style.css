@@ -1,0 +1,339 @@
+:root {
+    font-size: 62.5%;
+
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    max-height: 96vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hidden {
+    display: none;
+}
+
+/* HEADER */
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 4rem;
+}
+
+header div:first-child {
+    grid-column: 2;
+}
+
+header div:last-child {
+    justify-self: end;
+}
+
+
+header>div {
+    display: flex;
+    align-items: center;
+}
+
+#current-loc {
+    height: 2.8rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+header form {
+    position: relative;
+}
+
+header input {
+    appearance: none;
+    background-color: #00000000;
+    border: none;
+    border-bottom: 2px solid black;
+    padding: 0.5rem 0.5rem;
+    width: 30vw;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+header input:focus {
+    background-color: #00000000;
+    border-bottom: 2px solid white;
+    outline: none;
+}
+
+header input::placeholder {
+    color: grey;
+    font-weight: 600;
+}
+
+header form button {
+    position: absolute;
+    top: 0.3rem;
+    right: 0;
+    appearance: none;
+    background-color: #00000000;
+    background-image: url(media/icons/magnify.svg);
+    background-repeat: no-repeat;
+    border: none;
+    width: 2.3rem;
+    height: 2.3rem;
+    cursor: pointer
+}
+
+#not-found {
+    position: absolute;
+    bottom: -1.6rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: red;
+}
+
+header div:last-child {
+    margin-right: 4rem
+}
+
+.units {
+    box-sizing: border-box;
+    appearance: none;
+    height: 2.8rem;
+    width: 8rem;
+    font-size: 1.4rem;
+}
+
+.units#metric {
+    border-radius: 15px 0 0 15px;
+    padding-left: 1.2rem;
+}
+
+.units#imperial {
+    border-radius: 0 15px 15px 0;
+    padding-right: 1rem;
+
+}
+
+.units.active {
+    border: 2px solid black;
+    background-color: white;
+    font-weight: 600;
+}
+
+.units:not(.active) {
+    border: 1px solid black;
+    background-color: grey;
+    color: rgb(60, 60, 60);
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+
+}
+
+/* TODAY */
+
+#today {
+    display: grid;
+    grid-template: min-content 1fr / 1fr auto;
+    align-items: end;
+    column-gap: 3rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#loc-time {
+    grid-column: 1 / 3;
+}
+
+#today .city {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+}
+
+#today .date {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#today .time {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#weather-summary>div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#today .temperature {
+    font-size: 5rem;
+    font-weight: 1000;
+}
+
+#today .weather-icon {
+    height: 8rem;
+}
+
+#today .description {
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.details-container {
+    display: grid;
+    grid-template: 1fr 1fr / 3.5rem 1fr;
+    align-items: end;
+    column-gap: 0.6rem;
+}
+
+#weather-details img {
+    grid-row: 1 / 3;
+}
+
+.details-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.details-value {
+    font-size: 1.8rem;
+    font-weight: 1000;
+}
+
+/* NEXT-DAYS */
+
+#next-days {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-evenly;
+    column-gap: 2rem;
+    align-items: center;
+    width: min(1200px, 90vw);
+}
+
+.day-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2.5rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid black;
+    min-width: 120px;
+}
+
+.day-container .weekday {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.day-container .date {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+.day-container img {
+    height: 6rem;
+    margin-top: 0.5rem;
+}
+
+.day-container .container {
+    display: flex;
+    align-items: start;
+    gap: 0.2rem;
+    margin-top: -0.3rem;
+}
+
+.day-container .temperature {
+    font-size: 3rem;
+    font-weight: 1000;
+}
+
+.day-container .temp-units {
+    font-size: 2rem;
+    font-weight: 1000;
+    margin-top: 0.3rem;
+}
+
+.day-container .description {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-top: 0rem;
+    text-transform: capitalize;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(#ffffff2b, #ffffffa8);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+footer>div {
+    display: flex;
+    align-items: center;
+}
+
+footer div:first-child {
+    margin-left: 2rem;
+}
+
+footer div:nth-child(2) {
+    justify-self: center;
+}
+
+footer div:last-child {
+    justify-self: end;
+    margin-right: 2rem;
+}
+
+footer .logo {
+    height: 2.2rem;
+    margin-left: 0.5rem;
+}
+
+footer .big-logo {
+    height: 5rem;
+}
+
+footer a:visited {
+    color: black;
+}
